@@ -1,9 +1,14 @@
-import './App.css'
+/** @format */
+import React from 'react';
+import Container from 'react-bootstrap/esm/Container';
+import Home from './screens/Home';
 
-export default function App() {
-  return (
-    <main>
-      React ⚛️ + Vite ⚡ + Replit 🌀
-    </main>
-  )
-}
+const App = () => {
+	return (
+		<Container fluid className=' vh-100'>
+			<Home />
+		</Container>
+	);
+};
+
+export default App;

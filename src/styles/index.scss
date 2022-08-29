@@ -1,0 +1,29 @@
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../../node_modules/bootstrap/scss/utilities/api';
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/functions';
+
+.sidemenu_circle{
+    height: 10px;
+    width: 10px;
+    border-radius: 100%;
+}
+
+*{
+    list-style-type: none;
+}
+
+.sidebar{
+    background: #EEEFF4;
+}
+.divider{
+    height: 1px;
+    background: rgba(0, 0, 0 , .2);
+}
+.carousel{
+    height: 50vh;
+    img{
+        object-fit: cover;
+        height: 500px;
+    }
+}
