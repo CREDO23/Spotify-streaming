@@ -30,6 +30,7 @@ const Sidebar = () => {
 			label: 'Liked Songs',
 		},
 	];
+
 	return (
 		<>
 			<div className=''>

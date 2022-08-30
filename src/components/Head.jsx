@@ -1,14 +1,23 @@
 /** @format */
 
-import React, { useEffect } from 'react';
+import React from 'react';
+import { useDispatch } from 'react-redux';
 import Logo from '../assets/LogoMakr-9iOqpF.png';
 import { NavDropdown } from 'react-bootstrap';
 import { BiUserCircle } from 'react-icons/bi';
-import { useDispatch } from 'react-redux';
-import { getAccess } from '../store/actions/spotifyConnexion';
+import { getAccess } from '../store/actions/spotifyConnexionAction';
+import { useSelector } from 'react-redux';
+import { setUserInfo } from '../store/actions/userAction';
+import { useEffect } from 'react';
 
 const Head = () => {
 	const dispatch = useDispatch();
+	const token = useSelector((state) => state.token);
+	const user = useSelector((state) => state.user);
+	useEffect(() => {
+		dispatch(setUserInfo(token));
+	});
+
 	return (
 		<div className=' h-auto w-100 p-1  d-flex justify-content-between '>
 			<img height='40px' width='40px' src={Logo} alt='' />
@@ -17,13 +26,23 @@ const Head = () => {
 				<NavDropdown
 					className=' d-inline '
 					id='nav-dropdown-dark-example'
-					title='Credo Th'
+					title={`${user?.name ? user.name : 'Connexion'}`}
 					menuVariant='dark'>
 					<NavDropdown.Item onClick={() => dispatch(getAccess())}>
-						Déconnexion
+						Connexion
 					</NavDropdown.Item>
 				</NavDropdown>
-				<BiUserCircle className='ms-2' size={30} />
+				{user?.url ? (
+					<img
+						height='40px'
+						className=' rounded-circle ms-2'
+						width='40px'
+						src={user.url}
+						alt=''
+					/>
+				) : (
+					<BiUserCircle className='ms-2' size={30} />
+				)}
 			</div>
 		</div>
 	);

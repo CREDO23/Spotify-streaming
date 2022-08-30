@@ -2,10 +2,7 @@
 
 const initialState = {
 	token: null,
-	currentUser: {
-		userName: '',
-		imgURL: '',
-	},
+	currentUser: null,
 };
 
 export default initialState;

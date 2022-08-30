@@ -1,5 +1,5 @@
 /** @format */
-import tokenTypes from '../types/userTypes';
+import { tokentypes } from '../types/tokenTypes';
 export const getAccess = () => {
 	const clientId = '66c552752212464f808570991ebe2a9a';
 	const redirectUrl = 'http://localhost:5173/';
@@ -11,6 +11,9 @@ export const getToken = () => {
 	return (dispatch) => {
 		const hash = window.location.hash;
 		const token = hash.substring(1).split('&')[0].split('=')[1];
-		dispatch({ type: tokenTypes.SET_ACCESS_tOKEN, payload: token });
+		dispatch({
+			type: tokentypes.SET_ACCESS_TOKEN,
+			payload: token || null,
+		});
 	};
 };
