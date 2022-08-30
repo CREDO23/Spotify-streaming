@@ -25,6 +25,7 @@ const Sidebar = () => {
 			icon: <AiOutlinePlusCircle className='icon' size={24} />,
 			label: 'Add a PlayList',
 		},
+
 		{
 			icon: <MdFavoriteBorder size={24} />,
 			label: 'Liked Songs',
