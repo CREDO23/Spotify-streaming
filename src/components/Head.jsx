@@ -1,11 +1,14 @@
 /** @format */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Logo from '../assets/LogoMakr-9iOqpF.png';
 import { NavDropdown } from 'react-bootstrap';
 import { BiUserCircle } from 'react-icons/bi';
+import { useDispatch } from 'react-redux';
+import { getAccess } from '../store/actions/spotifyConnexion';
 
 const Head = () => {
+	const dispatch = useDispatch();
 	return (
 		<div className=' h-auto w-100 p-1  d-flex justify-content-between '>
 			<img height='40px' width='40px' src={Logo} alt='' />
@@ -16,7 +19,7 @@ const Head = () => {
 					id='nav-dropdown-dark-example'
 					title='Credo Th'
 					menuVariant='dark'>
-					<NavDropdown.Item href='#action/3.1'>
+					<NavDropdown.Item onClick={() => dispatch(getAccess())}>
 						Déconnexion
 					</NavDropdown.Item>
 				</NavDropdown>

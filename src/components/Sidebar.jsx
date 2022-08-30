@@ -8,7 +8,7 @@ import { MdFavoriteBorder } from 'react-icons/md';
 const Sidebar = () => {
 	const firstPart = [
 		{
-			icon: <BiHomeCircle fontWeight={'Normal'} size={24} />,
+			icon: <BiHomeCircle size={24} />,
 			label: 'Home',
 		},
 		{
@@ -22,7 +22,7 @@ const Sidebar = () => {
 	];
 	const secondtPart = [
 		{
-			icon: <AiOutlinePlusCircle fontWeight={'Normal'} size={24} />,
+			icon: <AiOutlinePlusCircle className='icon' size={24} />,
 			label: 'Add a PlayList',
 		},
 		{
