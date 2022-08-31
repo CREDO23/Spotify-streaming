@@ -1,22 +1,13 @@
 /** @format */
 
 import React from 'react';
-import { useDispatch } from 'react-redux';
 import Logo from '../assets/LogoMakr-9iOqpF.png';
 import { NavDropdown } from 'react-bootstrap';
 import { BiUserCircle } from 'react-icons/bi';
-import { getAccess } from '../store/actions/spotifyConnexionAction';
 import { useSelector } from 'react-redux';
-import { setUserInfo } from '../store/actions/userAction';
-import { useEffect } from 'react';
 
 const Head = () => {
-	const dispatch = useDispatch();
-	const token = useSelector((state) => state.token);
 	const user = useSelector((state) => state.user);
-	useEffect(() => {
-		dispatch(setUserInfo(token));
-	});
 
 	return (
 		<div className=' h-auto w-100 p-1  d-flex justify-content-between '>
@@ -26,10 +17,10 @@ const Head = () => {
 				<NavDropdown
 					className=' d-inline '
 					id='nav-dropdown-dark-example'
-					title={`${user?.name ? user.name : 'Connexion'}`}
+					title={`${user?.name ? user.name : ''}`}
 					menuVariant='dark'>
-					<NavDropdown.Item onClick={() => dispatch(getAccess())}>
-						Connexion
+					<NavDropdown.Item onClick={() => get()}>
+						Your Profile
 					</NavDropdown.Item>
 				</NavDropdown>
 				{user?.url ? (

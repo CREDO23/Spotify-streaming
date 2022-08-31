@@ -2,10 +2,10 @@
 import React from 'react';
 import { useEffect } from 'react';
 import Container from 'react-bootstrap/esm/Container';
-import Home from './screens/Home';
 import { getToken } from './store/actions/spotifyConnexionAction';
 import { useDispatch } from 'react-redux';
-import Connexion from './screens/connexion';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Route from './routes/Route';
 
 const App = () => {
 	const disatch = useDispatch();
@@ -14,10 +14,11 @@ const App = () => {
 	}, []);
 
 	return (
-		<Container fluid className=' vh-100'>
-			<Connexion />
-			<Home />
-		</Container>
+		<Router>
+			<Container fluid className=' vh-100'>
+				<Route />
+			</Container>
+		</Router>
 	);
 };
 

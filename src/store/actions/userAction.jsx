@@ -3,7 +3,7 @@ import axios from 'axios';
 import { usertypes } from '../types/userTypes';
 export const setUserInfo = (token) => {
 	return (dispactch) => {
-		if (token) {
+		{
 			try {
 				axios({
 					method: 'GET',
@@ -17,7 +17,6 @@ export const setUserInfo = (token) => {
 						email: response.data.email,
 						url: response.data.images[0].url,
 					};
-
 					dispactch({ type: usertypes.SET_USER_INFO, payload: user });
 				});
 			} catch (error) {

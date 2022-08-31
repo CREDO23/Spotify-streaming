@@ -10,7 +10,6 @@ export const userReducer = (
 	let newState = { ...state };
 	switch (action.type) {
 		case usertypes.SET_USER_INFO:
-			// console.log(action.payload);
 			newState = action.payload;
 			return newState;
 		default:
