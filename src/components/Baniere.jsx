@@ -8,10 +8,11 @@ import img3 from '../assets/images banieres/mus3.webp';
 
 const Baniere = () => {
 	return (
-		<div className='carousel rounded-4'>
-			<Carousel className=' h-100'>
+		<div className='  h-100 rounded-4'>
+			<Carousel className=''>
 				<Carousel.Item interval={3000}>
 					<img
+						height='500px'
 						className='rounded-2 w-100'
 						src={img1}
 						alt='First slide'
@@ -19,6 +20,7 @@ const Baniere = () => {
 				</Carousel.Item>
 				<Carousel.Item interval={3000}>
 					<img
+						height='500px'
 						className='rounded-2 w-100'
 						src={img2}
 						alt='Second slide'
@@ -26,6 +28,7 @@ const Baniere = () => {
 				</Carousel.Item>
 				<Carousel.Item interval={3000}>
 					<img
+						height='500px'
 						className='rounded-2 w-100'
 						src={img3}
 						alt='Third slide'

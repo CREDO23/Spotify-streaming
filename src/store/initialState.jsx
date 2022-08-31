@@ -4,7 +4,7 @@ const initialState = {
 	token: null,
 	currentUser: null,
 	media: {
-		homePlayList: null,
+		homePlayList: [],
 	},
 };
 

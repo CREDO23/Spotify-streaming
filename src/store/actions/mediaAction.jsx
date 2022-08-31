@@ -5,12 +5,12 @@ import axios from 'axios';
 export const getHomePlaylists = (token) => {
 	return (dispatch) => {
 		const qery = [
-			'r&b',
-			'rap',
-			'hiphop',
-			'jazz',
-			'classic',
-			'nouveate',
+			'R&B',
+			'Rap',
+			'Hip-Hop',
+			'Jazz',
+			'Classic',
+			'Nouveautés',
 		];
 		for (let i = 0; i < qery.length; i++) {
 			if (token)
@@ -24,7 +24,7 @@ export const getHomePlaylists = (token) => {
 				}).then((response) => {
 					dispatch({
 						type: mediatypes.GET_HOME_PAGE_PLAYLISTS,
-						payload: response,
+						payload: { data: response.data.playlists, nom: qery[i] },
 					});
 				});
 		}

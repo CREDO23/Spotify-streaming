@@ -5,6 +5,10 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+ *{
+  font-family: Poppins , sans-serif
+ }
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -14845,11 +14849,3 @@ textarea.form-control-lg {
   background: rgba(0, 0, 0, 0.2);
 }
 
-.carousel {
-  height: 50vh;
-}
-.carousel img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 500px;
-}/*# sourceMappingURL=index.css.map */
