@@ -3,6 +3,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import ItemCard from './ItemCard';
+import { Link } from 'react-router-dom';
 
 const CardsItem = ({ nom, items }) => {
 	return (
@@ -12,12 +13,15 @@ const CardsItem = ({ nom, items }) => {
 			</div>
 			<div className='d-flex  flex-wrap '>
 				{items &&
-					items.map((elmnt) => (
-						<ItemCard
-							description={elmnt.description}
-							urlImg={elmnt.images[0].url}
-							nom={elmnt.name}
-						/>
+					items.map((elmnt, index) => (
+						<Link to='/home/tracks'>
+							<ItemCard
+								key={index}
+								description={elmnt.description}
+								urlImg={elmnt.images[0].url}
+								nom={elmnt.name}
+							/>
+						</Link>
 					))}
 			</div>
 		</Container>

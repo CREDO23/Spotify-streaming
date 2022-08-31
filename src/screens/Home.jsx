@@ -2,7 +2,7 @@
 import React from 'react';
 
 import Sidebar from '../components/Sidebar';
-import Main from '../components/Main';
+import { Outlet } from 'react-router-dom';
 const Home = () => {
 	return (
 		<div className='row h-100'>
@@ -10,7 +10,7 @@ const Home = () => {
 				<Sidebar />
 			</div>
 			<div className='col-10'>
-				<Main />
+				<Outlet />
 			</div>
 		</div>
 	);

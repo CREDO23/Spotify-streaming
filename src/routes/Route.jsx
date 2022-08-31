@@ -3,15 +3,19 @@
 import Home from '../screens/Home';
 import Connexion from '../screens/Connexion';
 import { Routes, Route } from 'react-router-dom';
-
+import Tracks from '../components/Tracks';
 import React from 'react';
+import Main from '../components/Main';
 
 const LesRoutes = () => {
 	return (
 		<>
 			<Routes>
 				<Route path='/' element={<Connexion />} />
-				<Route path='/home' element={<Home />} />
+				<Route path='/home/' element={<Home />}>
+					<Route path='tracks' element={<Tracks />} />
+					<Route path='' element={<Main />} />
+				</Route>
 			</Routes>
 		</>
 	);

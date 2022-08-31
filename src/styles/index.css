@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 /*!
  * Bootstrap  v5.2.0 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
@@ -6,9 +7,10 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
  *{
-  font-family: Poppins , sans-serif
+  font-family: Poppins , sans-serif;
+  color :#0D1E56;
+  text-decoration: none;
  }
- @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -14844,8 +14846,16 @@ textarea.form-control-lg {
   background: #EEEFF4;
 }
 
+ a{
+  text-decoration: none;
+}
+
 .divider {
   height: 1px;
   background: rgba(0, 0, 0, 0.2);
+}
+
+.head-tracks{
+  background: linear-gradient(180deg, rgba(209,236,254,1) 0%, rgba(255,255,255,1) 70%);
 }
 

@@ -12,7 +12,7 @@ function ItemCard({ urlImg, description, nom }) {
 			/>
 			<Card.Body>
 				<Card.Title>{nom.substring(0, 12)}.</Card.Title>
-				<Card.Text>{description.substring(0, 20)}...</Card.Text>
+				<Card.Text>{description.substring(0, 15)}...</Card.Text>
 			</Card.Body>
 		</Card>
 	);
