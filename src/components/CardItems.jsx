@@ -12,17 +12,17 @@ const CardsItem = ({ nom, items }) => {
 				<p className='h2  m-3'>{nom}</p>
 			</div>
 			<div className='d-flex  flex-wrap '>
-				{items &&
-					items.map((elmnt, index) => (
-						<Link to='/home/tracks'>
-							<ItemCard
-								key={index}
-								description={elmnt.description}
-								urlImg={elmnt.images[0].url}
-								nom={elmnt.name}
-							/>
-						</Link>
-					))}
+				{items.map((elmnt, index) => (
+					<Link to='/home/tracks'>
+						<ItemCard
+							key={index}
+							description={elmnt.description}
+							urlImg={elmnt.images[0].url}
+							nom={elmnt.name}
+							urlTracks={elmnt.tracks.href}
+						/>
+					</Link>
+				))}
 			</div>
 		</Container>
 	);

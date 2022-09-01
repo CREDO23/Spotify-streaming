@@ -1,7 +1,7 @@
 /** @format */
 
 const initialState = {
-	token: null,
+	token: '',
 	currentUser: null,
 	media: {
 		homePlayList: [],

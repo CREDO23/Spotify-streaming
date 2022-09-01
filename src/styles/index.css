@@ -8035,6 +8035,9 @@ textarea.form-control-lg {
 .fs-6 {
   font-size: 1rem !important;
 }
+.fs-7 {
+  font-size: .8rem !important;
+}
 
 .fst-italic {
   font-style: italic !important;
@@ -14859,3 +14862,9 @@ textarea.form-control-lg {
   background: linear-gradient(180deg, rgba(209,236,254,1) 0%, rgba(255,255,255,1) 70%);
 }
 
+.cardItems{
+  padding: 0;
+  margin: 0;
+  outline: none;
+  border: none;
+}

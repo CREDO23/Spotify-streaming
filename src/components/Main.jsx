@@ -1,5 +1,6 @@
 /** @format */
 import React from 'react';
+import axios from 'axios';
 import Baniere from './Baniere';
 import Head from './Head';
 import CardsItem from './CardItems';
@@ -11,12 +12,12 @@ import { useEffect } from 'react';
 const Main = () => {
 	const dispatch = useDispatch();
 	const token = useSelector((state) => state.token);
-	const collection = useSelector((state) => state.media.homePlayList);
+	const collection = useSelector((state) => state.media);
 
 	useEffect(() => {
 		{
 			dispatch(getHomePlaylists(token));
-			dispatch(setUserInfo(token));
+			token ? dispatch(setUserInfo(token)) : token;
 		}
 	}, []);
 
@@ -31,13 +32,15 @@ const Main = () => {
 			<div className='w-100 d-flex'>
 				<div className=' w-75'>
 					{collection &&
-						collection.map((elmt, index) => (
-							<CardsItem
-								key={index}
-								items={elmt.data.items}
-								nom={elmt.nom}
-							/>
-						))}
+						collection.homePlayList.map((elmt, index) => {
+							return (
+								<CardsItem
+									key={elmt.nom}
+									items={elmt.data.items}
+									nom={elmt.nom}
+								/>
+							);
+						})}
 				</div>
 				<div className=' w-25'>
 					<p className='h3 fs-4 text-center  fw-normal  m-3'>

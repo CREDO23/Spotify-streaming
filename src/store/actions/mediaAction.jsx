@@ -13,20 +13,19 @@ export const getHomePlaylists = (token) => {
 			'Nouveautés',
 		];
 		for (let i = 0; i < qery.length; i++) {
-			if (token)
-				axios({
-					method: 'GET',
-					url: `https://api.spotify.com/v1/search?q=${qery[i]}&type=playlist`,
-					headers: {
-						Authorization: 'Bearer ' + token,
-						'Content-Type': 'application/json',
-					},
-				}).then((response) => {
-					dispatch({
-						type: mediatypes.GET_HOME_PAGE_PLAYLISTS,
-						payload: { data: response.data.playlists, nom: qery[i] },
-					});
+			axios({
+				method: 'GET',
+				url: `https://api.spotify.com/v1/search?q=${qery[i]}&type=playlist`,
+				headers: {
+					Authorization: 'Bearer ' + token,
+					'Content-Type': 'application/json',
+				},
+			}).then((response) => {
+				dispatch({
+					type: mediatypes.GET_HOME_PAGE_PLAYLISTS,
+					payload: { data: response.data.playlists, nom: qery[i] },
 				});
+			});
 		}
 	};
 };
