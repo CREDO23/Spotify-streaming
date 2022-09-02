@@ -1,8 +1,10 @@
 /** @format */
 import axios from 'axios';
 import { usertypes } from '../types/userTypes';
-export const setUserInfo = (token) => {
+export const setUserInfo = () => {
 	return (dispactch) => {
+		const hash = window.location.hash;
+		const token = hash.substring(1).split('&')[0].split('=')[1];
 		try {
 			axios({
 				method: 'GET',

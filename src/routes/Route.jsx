@@ -14,12 +14,10 @@ const LesRoutes = () => {
 		<>
 			<Routes>
 				<Route path='/' element={<Connexion />} />
-				{token ? (
-					<Route path='/home/' element={<Home />}>
-						<Route path='tracks' element={<Tracks />} />
-						<Route path='' element={<Main />} />
-					</Route>
-				) : null}
+				<Route path='/home/' element={<Home />}>
+					<Route path='tracks' element={<Tracks />} />
+					<Route path='' element={<Main />} />
+				</Route>
 			</Routes>
 		</>
 	);

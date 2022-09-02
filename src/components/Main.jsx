@@ -11,13 +11,12 @@ import { useEffect } from 'react';
 
 const Main = () => {
 	const dispatch = useDispatch();
-	const token = useSelector((state) => state.token);
 	const collection = useSelector((state) => state.media);
 
 	useEffect(() => {
 		{
-			dispatch(getHomePlaylists(token));
-			token ? dispatch(setUserInfo(token)) : token;
+			dispatch(getHomePlaylists());
+			dispatch(setUserInfo());
 		}
 	}, []);
 
@@ -35,7 +34,7 @@ const Main = () => {
 						collection.homePlayList.map((elmt, index) => {
 							return (
 								<CardsItem
-									key={elmt.nom}
+									key={index}
 									items={elmt.data.items}
 									nom={elmt.nom}
 								/>

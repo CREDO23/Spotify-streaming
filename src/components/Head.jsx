@@ -19,9 +19,7 @@ const Head = () => {
 					id='nav-dropdown-dark-example'
 					title={`${user?.name ? user.name : ''}`}
 					menuVariant='dark'>
-					<NavDropdown.Item onClick={() => get()}>
-						Your Profile
-					</NavDropdown.Item>
+					<NavDropdown.Item>Your Profile</NavDropdown.Item>
 				</NavDropdown>
 				{user?.url ? (
 					<img

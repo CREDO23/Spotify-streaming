@@ -1,14 +1,18 @@
 /** @format */
-import image from '../assets/LogoMakr-9iOqpF.png';
 import React from 'react';
 import { Table } from 'react-bootstrap';
-
+import TrackItem from './TrackItem';
+import { useSelector } from 'react-redux';
 const Tracks = () => {
+	const currentPlayList = useSelector(
+		(state) => state.media.currentPlayList,
+	);
+
 	return (
 		<div className='w-100'>
 			<div className='head-tracks w-100'>
 				<div className=' m-5 d-inline-flex align-items-center'>
-					<img src={image} alt='' />
+					<img src='' alt='' />
 					<div>
 						<p className='h4 fw-normal'>Album</p>
 						<p className='h2 fs-3 fw-bold'>Tokooos II Gold</p>
@@ -21,25 +25,23 @@ const Tracks = () => {
 					<thead>
 						<tr>
 							<th className='f fs-6 fw-light'>#</th>
-							<th className=' fw-light'>Title</th>
-							<th className=' fw-light'>Album</th>
-							<th className=' fw-light'>Time</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td colSpan={4}>
-								<div>
-									<img
-										height='40px'
-										width='60px'
-										src={image}
-										alt=''
-									/>
-								</div>
-							</td>
-						</tr>
-						{}
+						{currentPlayList?.items?.map((item, index) => {
+							return (
+								<tr index={index}>
+									<td>
+										<TrackItem
+											img={item?.track?.album?.images[0].url}
+											time={item?.track?.duration_ms}
+											name={item?.track?.name}
+											albumName={item?.track?.album?.name}
+										/>
+									</td>
+								</tr>
+							);
+						})}
 					</tbody>
 				</Table>
 			</div>

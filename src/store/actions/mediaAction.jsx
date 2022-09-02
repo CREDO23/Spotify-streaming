@@ -2,7 +2,7 @@
 
 import mediatypes from '../types/mediaType';
 import axios from 'axios';
-export const getHomePlaylists = (token) => {
+export const getHomePlaylists = () => {
 	return (dispatch) => {
 		const qery = [
 			'R&B',
@@ -12,6 +12,8 @@ export const getHomePlaylists = (token) => {
 			'Classic',
 			'Nouveautés',
 		];
+		const hash = window.location.hash;
+		const token = hash.substring(1).split('&')[0].split('=')[1];
 		for (let i = 0; i < qery.length; i++) {
 			axios({
 				method: 'GET',
@@ -27,5 +29,23 @@ export const getHomePlaylists = (token) => {
 				});
 			});
 		}
+	};
+};
+
+export const setCurrentPlayList = (token, url) => {
+	return (dispatch) => {
+		axios({
+			method: 'GET',
+			url: `${url}`,
+			headers: {
+				Authorization: 'Bearer ' + token,
+				'Content-Type': 'application/json',
+			},
+		}).then((response) => {
+			dispatch({
+				type: mediatypes.SET_CURRENT_PLAYLIST,
+				payload: response.data,
+			});
+		});
 	};
 };

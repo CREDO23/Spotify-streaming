@@ -9,6 +9,9 @@ export const mediaReducer = (state = initialState.media, action) => {
 		case mediatypes.GET_HOME_PAGE_PLAYLISTS:
 			newState.homePlayList.push(action.payload);
 			return newState;
+		case mediatypes.SET_CURRENT_PLAYLIST:
+			newState.currentPlayList = action.payload;
+			return newState;
 		default:
 			return newState;
 	}

@@ -1,28 +1,16 @@
 /** @format */
 import Card from 'react-bootstrap/Card';
-import { useSelector } from 'react-redux/es/exports';
+import { useDispatch, useSelector } from 'react-redux/es/exports';
+import { setCurrentPlayList } from '../store/actions/mediaAction';
 import axios from 'axios';
 
 function ItemCard({ urlImg, description, nom, urlTracks }) {
 	const token = useSelector((state) => state.token);
-	const get = () => {
-		try {
-			axios({
-				method: 'GET',
-				url: `${urlTracks}`,
-				headers: {
-					Authorization: 'Bearer ' + token,
-				},
-			}).then((response) => {
-				console.log(response);
-			});
-		} catch (error) {
-			console.log(error);
-		}
-	};
+	const dispatch = useDispatch();
+
 	return (
 		<Card
-			onClick={() => get()}
+			onClick={() => dispatch(setCurrentPlayList(token, urlTracks))}
 			className='col-1 card mx-2 my-1'
 			style={{ width: '200px' }}>
 			<Card.Img
