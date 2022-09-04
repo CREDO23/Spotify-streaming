@@ -5,7 +5,11 @@ const initialState = {
 	currentUser: null,
 	media: {
 		homePlayList: [],
-		currentPlayList: [],
+		currentPlayList: {
+			data: null,
+			info: null,
+		},
+		currentTrack: null,
 	},
 };
 

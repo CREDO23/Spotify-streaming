@@ -20,6 +20,8 @@ const CardsItem = ({ nom, items }) => {
 							urlImg={elmnt.images[0].url}
 							nom={elmnt.name}
 							urlTracks={elmnt.tracks.href}
+							type={elmnt.type}
+							nmbrTracs={elmnt.tracks.total}
 						/>
 					</Link>
 				))}

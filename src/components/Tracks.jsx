@@ -3,10 +3,16 @@ import React from 'react';
 import { Table } from 'react-bootstrap';
 import TrackItem from './TrackItem';
 import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useState } from 'react';
 const Tracks = () => {
 	const currentPlayList = useSelector(
 		(state) => state.media.currentPlayList,
 	);
+	const [info, setInfo] = useState();
+	useEffect(() => {
+		setTimeout(() => setInfo({ ...currentPlayList.info }), 500);
+	}, [currentPlayList]);
 
 	return (
 		<div className='w-100'>
@@ -14,9 +20,11 @@ const Tracks = () => {
 				<div className=' m-5 d-inline-flex align-items-center'>
 					<img src='' alt='' />
 					<div>
-						<p className='h4 fw-normal'>Album</p>
-						<p className='h2 fs-3 fw-bold'>Tokooos II Gold</p>
-						<p className=' fw-light'>Fally Ipupa . 2022 . 37 Songs</p>
+						<p className='h4 fw-normal'>{info?.type}</p>
+						<p className='h2 fs-3 fw-bold'>
+							{currentPlayList?.info?.nom}
+						</p>
+						<p className=' fw-light'>{`${info?.description}  ${info?.nmbrTracs}Songs`}</p>
 					</div>
 				</div>
 			</div>
@@ -28,7 +36,7 @@ const Tracks = () => {
 						</tr>
 					</thead>
 					<tbody>
-						{currentPlayList?.items?.map((item, index) => {
+						{currentPlayList?.data?.items?.map((item, index) => {
 							return (
 								<tr index={index}>
 									<td>

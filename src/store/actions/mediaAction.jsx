@@ -32,7 +32,8 @@ export const getHomePlaylists = () => {
 	};
 };
 
-export const setCurrentPlayList = (token, url) => {
+export const setCurrentPlayList = (token, url, itemInfo) => {
+	const info = itemInfo;
 	return (dispatch) => {
 		axios({
 			method: 'GET',
@@ -44,8 +45,17 @@ export const setCurrentPlayList = (token, url) => {
 		}).then((response) => {
 			dispatch({
 				type: mediatypes.SET_CURRENT_PLAYLIST,
-				payload: response.data,
+				payload: { data: response.data, info },
 			});
 		});
+	};
+};
+
+const playTrack = (item) => {
+	const url = item;
+	const track = new Audio(url);
+	track.play();
+	return (dispatch) => {
+		dispatch({ type: mediatypes.PLAY, payload: item });
 	};
 };

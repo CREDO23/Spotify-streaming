@@ -7393,6 +7393,9 @@ textarea.form-control-lg {
 .h-25 {
   height: 25% !important;
 }
+.h-1 {
+  height: 50px !important;
+}
 
 .h-50 {
   height: 50% !important;
@@ -8232,6 +8235,10 @@ textarea.form-control-lg {
 .bg-primary {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-prim {
+  background: rgba(209,236,254,1) ;
 }
 
 .bg-secondary {
