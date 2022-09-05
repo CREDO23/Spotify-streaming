@@ -16,6 +16,15 @@ export const mediaReducer = (state = initialState.media, action) => {
 		case mediatypes.PLAY:
 			newState.currentTrack.data = action.payload.data;
 			newState.currentTrack.info = { ...action.payload.info };
+		case mediatypes.SEARCH_ALBUM:
+			newState.search.albums = action.payload;
+			return newState;
+		case mediatypes.SEARCH_PLAYLIST:
+			newState.search.playlists = action.payload;
+			return newState;
+		case mediatypes.SEARCH_TRACK:
+			newState.search.tracks = action.payload;
+			return newState;
 		default:
 			return newState;
 	}

@@ -62,3 +62,24 @@ export const playTrack = (item) => {
 		});
 	};
 };
+
+export const search = (query, token) => {
+	return (dispatch) => {
+		const types = ['album', 'playlist', 'track'];
+		for (let i = 0; i < types.length; i++) {
+			axios({
+				method: 'GET',
+				url: `https://api.spotify.com/v1/search?q=${query}&type=${types[i]}`,
+				headers: {
+					Authorization: 'Bearer ' + token,
+					'Content-Type': 'application/json',
+				},
+			}).then((response) =>
+				dispatch({
+					type: `SEARCH_${types[i].toUpperCase()}`,
+					payload: response.data,
+				}),
+			);
+		}
+	};
+};

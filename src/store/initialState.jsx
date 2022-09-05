@@ -15,6 +15,11 @@ const initialState = {
 				played: false,
 			},
 		},
+		search: {
+			albums: null,
+			playlists: null,
+			tracks: null,
+		},
 	},
 };
 
