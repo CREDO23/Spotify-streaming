@@ -3,6 +3,7 @@ import React from 'react';
 import { Table } from 'react-bootstrap';
 import TrackItem from './TrackItem';
 import { useSelector } from 'react-redux';
+import { GiHeadphones } from 'react-icons/gi';
 
 const Tracks = () => {
 	const data = useSelector(
@@ -43,9 +44,16 @@ const Tracks = () => {
 									<td>
 										<TrackItem
 											img={item?.track?.album?.images[0].url}
-											time={item?.track?.duration_ms}
+											icon={<GiHeadphones />}
+											time={
+												item?.track?.duration_ms
+													? item?.track?.duration_ms
+													: item.duration_ms
+											}
 											name={item?.track?.name}
-											albumName={item?.track?.album?.name}
+											albumName={
+												item?.track?.album?.name || item.name
+											}
 											preview={item?.track?.preview_url}
 										/>
 									</td>

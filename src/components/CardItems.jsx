@@ -12,16 +12,26 @@ const CardsItem = ({ nom, items }) => {
 				<p className='h2  m-3'>{nom}</p>
 			</div>
 			<div className='d-flex  flex-wrap '>
-				{items.map((elmnt, index) => (
+				{items?.map((elmnt, index) => (
 					<Link to='/home/tracks'>
 						<ItemCard
 							key={index}
-							description={elmnt.description}
+							description={
+								elmnt?.description ? elmnt?.description : ''
+							}
 							urlImg={elmnt.images[0].url}
 							nom={elmnt.name}
-							urlTracks={elmnt.tracks.href}
+							urlTracks={
+								elmnt?.tracks?.href
+									? elmnt.tracks.href
+									: elmnt.href + '/tracks'
+							}
 							type={elmnt.type}
-							nmbrTracs={elmnt.tracks.total}
+							nmbrTracs={
+								elmnt?.tracks?.total
+									? elmnt?.tracks?.total
+									: elmnt.total_tracks
+							}
 						/>
 					</Link>
 				))}
