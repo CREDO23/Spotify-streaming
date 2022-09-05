@@ -51,11 +51,14 @@ export const setCurrentPlayList = (token, url, itemInfo) => {
 	};
 };
 
-const playTrack = (item) => {
-	const url = item;
+export const playTrack = (item) => {
+	const url = item.preview;
 	const track = new Audio(url);
 	track.play();
 	return (dispatch) => {
-		dispatch({ type: mediatypes.PLAY, payload: item });
+		dispatch({
+			type: mediatypes.PLAY,
+			payload: { data: item, info: { played: true } },
+		});
 	};
 };

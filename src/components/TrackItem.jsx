@@ -1,14 +1,21 @@
 /** @format */
 
 import React from 'react';
-import logo from '../assets/LogoMakr-9iOqpF.png';
 import { Container } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
+import { playTrack } from '../store/actions/mediaAction';
 
-const TrackItem = ({ img, time, name, albumName }) => {
+const TrackItem = ({ img, time, name, albumName, preview }) => {
 	const trackMinutes = Math.floor(time / 1000 / 60);
 	const trackSecondes = Math.floor((time / 100) % 60);
+	const dispatch = useDispatch();
+
 	return (
-		<Container className='row'>
+		<Container
+			onClick={() =>
+				dispatch(playTrack({ img, time, name, albumName, preview }))
+			}
+			className='row'>
 			<div className=' col-11 d-inline-flex  align-items-center '>
 				<img height='50px' width='50px' src={img} alt='' />
 				<div className='h-75 mx-4 my-1 align-items-start justify-content-evenly d-flex flex-column'>

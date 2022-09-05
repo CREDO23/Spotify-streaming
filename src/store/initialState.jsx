@@ -9,7 +9,12 @@ const initialState = {
 			data: null,
 			info: null,
 		},
-		currentTrack: null,
+		currentTrack: {
+			data: null,
+			info: {
+				played: false,
+			},
+		},
 	},
 };
 

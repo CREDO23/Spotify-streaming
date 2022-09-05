@@ -3,16 +3,14 @@ import React from 'react';
 import { Table } from 'react-bootstrap';
 import TrackItem from './TrackItem';
 import { useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import { useState } from 'react';
+
 const Tracks = () => {
-	const currentPlayList = useSelector(
-		(state) => state.media.currentPlayList,
+	const data = useSelector(
+		(state) => state.media.currentPlayList.data,
 	);
-	const [info, setInfo] = useState();
-	useEffect(() => {
-		setTimeout(() => setInfo({ ...currentPlayList.info }), 500);
-	}, [currentPlayList]);
+	const info = useSelector(
+		(state) => state.media.currentPlayList.info,
+	);
 
 	return (
 		<div className='w-100'>
@@ -20,11 +18,14 @@ const Tracks = () => {
 				<div className=' m-5 d-inline-flex align-items-center'>
 					<img src='' alt='' />
 					<div>
-						<p className='h4 fw-normal'>{info?.type}</p>
-						<p className='h2 fs-3 fw-bold'>
-							{currentPlayList?.info?.nom}
+						<p className='h4 fw-normal'>{info?.type.toUpperCase()}</p>
+						<p className='h2 fs-3 fw-bold'>{info?.nom}</p>
+						<p className=' fw-light'>
+							{info?.description}{' '}
+							<span className=' fw-semibold'>
+								{info?.nmbrTracs}Songs
+							</span>
 						</p>
-						<p className=' fw-light'>{`${info?.description}  ${info?.nmbrTracs}Songs`}</p>
 					</div>
 				</div>
 			</div>
@@ -36,7 +37,7 @@ const Tracks = () => {
 						</tr>
 					</thead>
 					<tbody>
-						{currentPlayList?.data?.items?.map((item, index) => {
+						{data?.items?.map((item, index) => {
 							return (
 								<tr index={index}>
 									<td>
@@ -45,6 +46,7 @@ const Tracks = () => {
 											time={item?.track?.duration_ms}
 											name={item?.track?.name}
 											albumName={item?.track?.album?.name}
+											preview={item?.track?.preview_url}
 										/>
 									</td>
 								</tr>

@@ -2,7 +2,6 @@
 import Card from 'react-bootstrap/Card';
 import { useDispatch, useSelector } from 'react-redux/es/exports';
 import { setCurrentPlayList } from '../store/actions/mediaAction';
-import axios from 'axios';
 
 function ItemCard({
 	urlImg,
