@@ -14900,3 +14900,70 @@ body{
 .search{
   height: 630px;
 }
+@media (max-width: 576px) {
+    .sidebar , .recent , .description {
+      display: none;
+    }
+    .recent{
+      width: 0%;
+    }
+    .scroll-x{
+      height: 95%;
+      width: 100%;
+    }
+    .scroll-y{
+      height: 690px;
+    }
+    .main{
+      width: 100%;
+    }
+    
+     
+      .col-s-2 {
+        flex: 0 0 auto;
+        width: 16.66666667%;
+      }
+      .col-sm-3 {
+        flex: 0 0 auto;
+        width: 25%;
+      }
+      .col-sm-4 {
+        flex: 0 0 auto;
+        width: 33.33333333%;
+      }
+      .col-sm-5 {
+        flex: 0 0 auto;
+        width: 41.66666667%;
+      }
+      .col-sm-6 {
+        flex: 0 0 auto;
+        width: 50%;
+      }
+      .col-sm-7 {
+        flex: 0 0 auto;
+        width: 58.33333333%;
+      }
+      .col-sm-8 {
+        flex: 0 0 auto;
+        width: 66.66666667%;
+      }
+      .col-sm-9 {
+        flex: 0 0 auto;
+        width: 75%;
+      }
+      .col-s-10 {
+        flex: 0 0 auto;
+        width: 83.33333333%;
+      }
+      .col-sm-11 {
+        flex: 0 0 auto;
+        width: 91.66666667%;
+      }
+      .col-sm-12 {
+        flex: 0 0 auto;
+        width: 100%;
+      }
+      .offset-sm-0 {
+        margin-left: 0;
+      }
+  }

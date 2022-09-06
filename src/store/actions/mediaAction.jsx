@@ -3,7 +3,7 @@
 import mediatypes from '../types/mediaType';
 import axios from 'axios';
 
-export const getHomePlaylists = () => {
+export const getHomePlaylists = (token) => {
 	return (dispatch) => {
 		const qery = [
 			'R&B',
@@ -13,8 +13,6 @@ export const getHomePlaylists = () => {
 			'Classic',
 			'Nouveautés',
 		];
-		const hash = window.location.hash;
-		const token = hash.substring(1).split('&')[0].split('=')[1];
 		for (let i = 0; i < qery.length; i++) {
 			axios({
 				method: 'GET',

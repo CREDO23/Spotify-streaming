@@ -7,11 +7,6 @@ import { search } from '../store/actions/mediaAction';
 import TrackItem from './TrackItem';
 import CardsItem from './CardItems';
 import { Table } from 'react-bootstrap';
-import {
-	getAccess,
-	getToken,
-	refreshToken,
-} from '../store/actions/spotifyConnexionAction';
 
 const Search = () => {
 	const token = useSelector((state) => state.token);
@@ -23,11 +18,7 @@ const Search = () => {
 		(state) => state.media.search.playlists,
 	);
 	useEffect(() => {
-		dispatch(refreshToken());
-		if (!token) {
-			dispatch(getAccess());
-			dispatch(getToken());
-		}
+		if (!token) window.location.href = '/home';
 	}, []);
 
 	return (

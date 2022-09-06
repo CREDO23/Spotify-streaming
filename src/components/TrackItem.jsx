@@ -24,7 +24,7 @@ const TrackItem = ({
 				dispatch(playTrack({ img, time, name, albumName, id }))
 			}
 			className='row'>
-			<div className=' col-11 d-inline-flex  align-items-center '>
+			<div className='col-s-10 col-md-11 d-inline-flex  align-items-center '>
 				{img ? (
 					<img height='50px' width='50px' src={img} alt='' />
 				) : (
@@ -35,7 +35,7 @@ const TrackItem = ({
 					<p className='fs-7 fw-lighter m-0'>{albumName}</p>
 				</div>
 			</div>
-			<div className=' col d-flex justify-content-center align-items-center'>
+			<div className=' col-md-1 col-s-2 d-flex justify-content-center align-items-center'>
 				<p className='m-0 fs-7'>
 					<span>
 						{trackMinutes.toString().length == 1

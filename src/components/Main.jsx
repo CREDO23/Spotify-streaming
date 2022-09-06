@@ -1,26 +1,25 @@
 /** @format */
 import React from 'react';
-import axios from 'axios';
-import Baniere from './Baniere';
+
 import Head from './Head';
 import CardsItem from './CardItems';
 import { useSelector, useDispatch } from 'react-redux';
 import { getHomePlaylists } from '../store/actions/mediaAction';
-import { setUserInfo } from '../store/actions/userAction';
 import { useEffect } from 'react';
 import { refreshToken } from '../store/actions/spotifyConnexionAction';
 
 const Main = () => {
 	const dispatch = useDispatch();
-	const collection = useSelector((state) => state.media);
+	const token = useSelector((state) => state.token);
+	const collection = useSelector((state) => state.media.homePlayList);
 
 	useEffect(() => {
 		{
-			dispatch(getHomePlaylists());
-			dispatch(setUserInfo());
 			dispatch(refreshToken());
+			dispatch(getHomePlaylists(token));
 		}
 	}, []);
+	console.log(collection);
 
 	return (
 		<div className=' w-100'>
@@ -28,9 +27,9 @@ const Main = () => {
 				<Head />
 			</div>
 			<div className='w-100 d-flex'>
-				<div className='scroll-y w-75'>
+				<div className='scroll-y main '>
 					{collection &&
-						collection.homePlayList.map((elmt, index) => {
+						collection.map((elmt, index) => {
 							return (
 								<CardsItem
 									key={index}
@@ -40,7 +39,7 @@ const Main = () => {
 							);
 						})}
 				</div>
-				<div className=' w-25'>
+				<div className='recent w-25'>
 					<p className='h5 text-center  fw-semi-bold   m-3'>
 						Recently Played
 					</p>
