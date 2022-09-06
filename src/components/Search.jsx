@@ -31,7 +31,7 @@ const Search = () => {
 	}, []);
 
 	return (
-		<div className='scroll-y'>
+		<div className='scroll-y search'>
 			<div className=' d-flex align-items-center justify-content-center'>
 				<input
 					value={query}
@@ -48,7 +48,7 @@ const Search = () => {
 					Search
 				</button>
 			</div>
-			{(tracks || albums || playlists) && (
+			{tracks || albums || playlists ? (
 				<div>
 					<div className='scroll-y row'>
 						<Table hover>
@@ -87,6 +87,8 @@ const Search = () => {
 						/>
 					</div>
 				</div>
+			) : (
+				<div className=' text-center p-5 fw-light'>No result</div>
 			)}
 		</div>
 	);

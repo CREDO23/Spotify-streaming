@@ -14877,7 +14877,7 @@ body{
 
 .scroll-y{
   overflow-y: scroll;
-  height: 570px;
+  height: 580px;
 }
 .scroll-x{
   height: 350px;
@@ -14896,4 +14896,7 @@ body{
 }
 .tracks{
   height:420px ;
+}
+.search{
+  height: 630px;
 }

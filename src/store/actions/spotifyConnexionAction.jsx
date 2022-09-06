@@ -3,7 +3,6 @@ import { tokentypes } from '../types/tokenTypes';
 import { Buffer } from 'buffer';
 export const getAccess = () => {
 	const clientId = '66c552752212464f808570991ebe2a9a';
-	const clientSecret = '77ecc13970fb4395866f69eebd6bb499';
 	const redirectUrl = 'http://localhost:5173/home';
 	const scope = 'user-read-private user-read-email';
 	window.location.href = `https://accounts.spotify.com/authorize?client_id=${clientId}&redirect_uri=${redirectUrl}&scope=${scope}&response_type=token&show_daialog=true`;

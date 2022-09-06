@@ -37,7 +37,7 @@ const Tracks = () => {
 						<p className=' fw-light'>
 							{info?.description}{' '}
 							<span className=' fw-semibold'>
-								{info?.nmbrTracs}Songs
+								{info?.nmbrTracs}Song{info?.nmbrTracs > 1 ? 's' : ''}
 							</span>
 						</p>
 					</div>

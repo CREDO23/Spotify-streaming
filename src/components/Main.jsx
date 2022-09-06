@@ -41,7 +41,7 @@ const Main = () => {
 						})}
 				</div>
 				<div className=' w-25'>
-					<p className='h5 text-center  fw-semi-bold text-decoration-underline  m-3'>
+					<p className='h5 text-center  fw-semi-bold   m-3'>
 						Recently Played
 					</p>
 				</div>

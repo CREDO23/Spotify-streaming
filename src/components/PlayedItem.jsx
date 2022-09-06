@@ -7,17 +7,26 @@ const PlayedItem = () => {
 	const currentPlayed = useSelector(
 		(state) => state.media.currentPlayed,
 	);
-
+	<iframe
+		style='border-radius:0px'
+		src='https://open.spotify.com/embed/playlist/37i9dQZF1E4D8opO7q1DAr?utm_source=generator'
+		width='100%'
+		height='380'
+		frameBorder='0'
+		allowfullscreen=''
+		allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'></iframe>;
 	return (
-		currentPlayed.id && (
-			<iframe
-				src={`https://open.spotify.com/embed/${currentPlayed.type}/${currentPlayed.id}?utm_source=generator`}
-				width='100%'
-				height='80'
-				frameBorder='0'
-				allowfullscreen=''
-				allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'></iframe>
-		)
+		<iframe
+			src={`https://open.spotify.com/embed/${
+				currentPlayed.type || 'playlist'
+			}/${
+				currentPlayed.id || '37i9dQZF1E4D8opO7q1DAr'
+			}?utm_source=generator`}
+			width='100%'
+			height='80'
+			frameBorder='0'
+			allowfullscreen=''
+			allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'></iframe>
 	);
 };
 
