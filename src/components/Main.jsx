@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getHomePlaylists } from '../store/actions/mediaAction';
 import { setUserInfo } from '../store/actions/userAction';
 import { useEffect } from 'react';
+import { refreshToken } from '../store/actions/spotifyConnexionAction';
 
 const Main = () => {
 	const dispatch = useDispatch();
@@ -17,6 +18,7 @@ const Main = () => {
 		{
 			dispatch(getHomePlaylists());
 			dispatch(setUserInfo());
+			dispatch(refreshToken());
 		}
 	}, []);
 
@@ -25,9 +27,6 @@ const Main = () => {
 			<div>
 				<Head />
 			</div>
-			{/* <div>
-				<Baniere />
-			</div> */}
 			<div className='w-100 d-flex'>
 				<div className='scroll-y w-75'>
 					{collection &&

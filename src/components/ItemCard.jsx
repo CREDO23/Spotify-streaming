@@ -1,7 +1,11 @@
 /** @format */
 import Card from 'react-bootstrap/Card';
+import { VscPlayCircle } from 'react-icons/vsc';
 import { useDispatch, useSelector } from 'react-redux/es/exports';
-import { setCurrentPlayList } from '../store/actions/mediaAction';
+import {
+	playTrack,
+	setCurrentPlayList,
+} from '../store/actions/mediaAction';
 
 function ItemCard({
 	urlImg,
@@ -10,6 +14,7 @@ function ItemCard({
 	description,
 	nom,
 	urlTracks,
+	id,
 }) {
 	const token = useSelector((state) => state.token);
 	const dispatch = useDispatch();
@@ -19,6 +24,7 @@ function ItemCard({
 		nmbrTracs,
 		type,
 		description,
+		id,
 	};
 
 	return (
@@ -35,8 +41,12 @@ function ItemCard({
 				alt={nom.substring(0, 5)}
 			/>
 			<Card.Body>
-				<Card.Title>{nom.substring(0, 12)}.</Card.Title>
-				<Card.Text>{description.substring(0, 15)}...</Card.Text>
+				{/* <Card.Title>{nom.substring(0, 12)}.</Card.Title> */}
+				{/* <Card.Text>{description.substring(0, 15)}...</Card.Text> */}
+				<VscPlayCircle
+					onClick={() => dispatch(playTrack({ id, type }))}
+					size={30}
+				/>
 			</Card.Body>
 		</Card>
 	);

@@ -11,15 +11,13 @@ const initialState = {
 		},
 		currentTrack: {
 			data: null,
-			info: {
-				played: false,
-			},
 		},
 		search: {
 			albums: null,
 			playlists: null,
 			tracks: null,
 		},
+		currentPlayed: {},
 	},
 };
 

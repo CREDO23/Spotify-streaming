@@ -46,20 +46,23 @@ export const setCurrentPlayList = (token, url, itemInfo) => {
 		}).then((response) => {
 			dispatch({
 				type: mediatypes.SET_CURRENT_PLAYLIST,
-				payload: { data: response.data, info },
+				payload: {
+					data: response.data,
+					info,
+				},
 			});
 		});
 	};
 };
 
 export const playTrack = (item) => {
-	const url = item.preview;
-	const track = new Audio(url);
-	track.play();
 	return (dispatch) => {
 		dispatch({
 			type: mediatypes.PLAY,
-			payload: { data: item, info: { played: true } },
+			payload: {
+				data: item,
+				infoToPlay: { id: item.id, type: item.type || 'track' },
+			},
 		});
 	};
 };

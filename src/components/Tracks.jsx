@@ -56,6 +56,7 @@ const Tracks = () => {
 								<tr index={index}>
 									<td>
 										<TrackItem
+											id={item?.track?.id}
 											img={item?.track?.album?.images[0]?.url}
 											icon={<GiHeadphones />}
 											time={

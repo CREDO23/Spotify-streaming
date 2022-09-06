@@ -5,7 +5,15 @@ import { Container } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { playTrack } from '../store/actions/mediaAction';
 
-const TrackItem = ({ img, time, name, albumName, preview, icon }) => {
+const TrackItem = ({
+	img,
+	time,
+	name,
+	albumName,
+	preview,
+	icon,
+	id,
+}) => {
 	const trackMinutes = Math.floor(time / 1000 / 60);
 	const trackSecondes = Math.floor((time / 100) % 60);
 	const dispatch = useDispatch();
@@ -13,7 +21,7 @@ const TrackItem = ({ img, time, name, albumName, preview, icon }) => {
 	return (
 		<Container
 			onClick={() =>
-				dispatch(playTrack({ img, time, name, albumName, preview }))
+				dispatch(playTrack({ img, time, name, albumName, id }))
 			}
 			className='row'>
 			<div className=' col-11 d-inline-flex  align-items-center '>

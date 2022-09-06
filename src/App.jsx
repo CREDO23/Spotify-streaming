@@ -6,6 +6,7 @@ import { getToken } from './store/actions/spotifyConnexionAction';
 import { useDispatch } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Route from './routes/Route';
+import PlayedItem from './components/PlayedItem';
 
 const App = () => {
 	const disatch = useDispatch();
@@ -15,7 +16,7 @@ const App = () => {
 
 	return (
 		<Router>
-			<Container fluid className=' vh-100'>
+			<Container fluid>
 				<div>
 					<Route />
 				</div>

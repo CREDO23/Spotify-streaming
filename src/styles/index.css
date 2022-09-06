@@ -14874,9 +14874,10 @@ body{
   outline: none;
   border: none;
 }
+
 .scroll-y{
   overflow-y: scroll;
-  height: 650px;
+  height: 570px;
 }
 .scroll-x{
   height: 350px;
@@ -14892,4 +14893,7 @@ body{
 }
 .scroll-x::-webkit-scrollbar-thumb , .scroll-y::-webkit-scrollbar-thumb{
   background: #0D1E56;
+}
+.tracks{
+  height:420px ;
 }

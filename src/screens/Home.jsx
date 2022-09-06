@@ -1,8 +1,9 @@
 /** @format */
 import React from 'react';
-
+import PlayedItem from '../components/PlayedItem';
 import Sidebar from '../components/Sidebar';
 import { Outlet } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Home = () => {
 	return (
@@ -12,7 +13,12 @@ const Home = () => {
 			</div>
 
 			<div className='col-10'>
-				<Outlet />
+				<div>
+					<Outlet />
+				</div>
+				<div className='playedItem'>
+					<PlayedItem />
+				</div>
 			</div>
 		</div>
 	);
