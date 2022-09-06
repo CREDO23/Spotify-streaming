@@ -2,10 +2,23 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
 import TrackItem from './TrackItem';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { GiHeadphones } from 'react-icons/gi';
+import { useEffect } from 'react';
+import {
+	getAccess,
+	getToken,
+} from '../store/actions/spotifyConnexionAction';
 
 const Tracks = () => {
+	const token = useSelector((state) => state.token);
+	const dispatch = useDispatch();
+	useEffect(() => {
+		if (!token) {
+			dispatch(getAccess);
+			dispatch(getToken);
+		}
+	}, []);
 	const data = useSelector(
 		(state) => state.media.currentPlayList.data,
 	);
@@ -30,7 +43,7 @@ const Tracks = () => {
 					</div>
 				</div>
 			</div>
-			<div className='tracks'>
+			<div className='scroll-y tracks'>
 				<Table hover>
 					<thead>
 						<tr>
@@ -43,7 +56,7 @@ const Tracks = () => {
 								<tr index={index}>
 									<td>
 										<TrackItem
-											img={item?.track?.album?.images[0].url}
+											img={item?.track?.album?.images[0]?.url}
 											icon={<GiHeadphones />}
 											time={
 												item?.track?.duration_ms

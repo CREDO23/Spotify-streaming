@@ -11,7 +11,7 @@ const CardsItem = ({ nom, items }) => {
 			<div>
 				<p className='h2  m-3'>{nom}</p>
 			</div>
-			<div className='d-flex  flex-wrap '>
+			<div className='d-flex scroll-x  '>
 				{items?.map((elmnt, index) => (
 					<Link to='/home/tracks'>
 						<ItemCard

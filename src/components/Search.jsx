@@ -1,6 +1,6 @@
 /** @format */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { search } from '../store/actions/mediaAction';
@@ -17,9 +17,15 @@ const Search = () => {
 	const playlists = useSelector(
 		(state) => state.media.search.playlists,
 	);
+	useEffect(() => {
+		console.log('home');
+		if (!token) {
+			window.location.href = '/';
+		}
+	}, []);
 
 	return (
-		<div>
+		<div className='scroll-y'>
 			<div className=' d-flex align-items-center justify-content-center'>
 				<input
 					value={query}
@@ -38,7 +44,7 @@ const Search = () => {
 			</div>
 			{(tracks || albums || playlists) && (
 				<div>
-					<div className='row'>
+					<div className='scroll-y row'>
 						<Table hover>
 							<thead>
 								<tr>

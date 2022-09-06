@@ -26,7 +26,7 @@ function ItemCard({
 			onClick={() => {
 				dispatch(setCurrentPlayList(token, urlTracks, itemInfo));
 			}}
-			className='col-1 card mx-2 my-1'
+			className=' card mx-2 my-1'
 			style={{ width: '200px' }}>
 			<Card.Img
 				variant='top'

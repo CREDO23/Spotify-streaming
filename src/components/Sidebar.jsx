@@ -73,7 +73,6 @@ const Sidebar = () => {
 					);
 				})}
 			</ul>
-			<div className='divider w-75 ms-4'></div>
 		</>
 	);
 };

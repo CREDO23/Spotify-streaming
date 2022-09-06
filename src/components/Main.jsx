@@ -25,11 +25,11 @@ const Main = () => {
 			<div>
 				<Head />
 			</div>
-			<div>
+			{/* <div>
 				<Baniere />
-			</div>
+			</div> */}
 			<div className='w-100 d-flex'>
-				<div className=' w-75'>
+				<div className='scroll-y w-75'>
 					{collection &&
 						collection.homePlayList.map((elmt, index) => {
 							return (
@@ -42,10 +42,9 @@ const Main = () => {
 						})}
 				</div>
 				<div className=' w-25'>
-					<p className='h3 fs-4 text-center  fw-normal  m-3'>
+					<p className='h5 text-center  fw-semi-bold text-decoration-underline  m-3'>
 						Recently Played
 					</p>
-					<div className=' w-100 border border-opacity-10 rounded-1 border-dark'></div>
 				</div>
 			</div>
 		</div>

@@ -8,7 +8,7 @@ import img3 from '../assets/images banieres/mus3.webp';
 
 const Baniere = () => {
 	return (
-		<div className='  h-100 rounded-4'>
+		<div className=' h-100 rounded-4'>
 			<Carousel className=''>
 				<Carousel.Item interval={3000}>
 					<img

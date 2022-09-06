@@ -4,11 +4,12 @@ import React from 'react';
 import Logo from '../assets/LogoMakr-9iOqpF.png';
 import { NavDropdown } from 'react-bootstrap';
 import { BiUserCircle } from 'react-icons/bi';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { refreshToken } from '../store/actions/spotifyConnexionAction';
 
 const Head = () => {
 	const user = useSelector((state) => state.user);
-
+	const dispatch = useDispatch();
 	return (
 		<div className=' h-auto w-100 p-1  d-flex justify-content-between '>
 			<img height='40px' width='40px' src={Logo} alt='' />
@@ -19,7 +20,9 @@ const Head = () => {
 					id='nav-dropdown-dark-example'
 					title={`${user?.name ? user.name : ''}`}
 					menuVariant='dark'>
-					<NavDropdown.Item>Your Profile</NavDropdown.Item>
+					<NavDropdown.Item onClick={() => dispatch(refreshToken())}>
+						Your Profile
+					</NavDropdown.Item>
 				</NavDropdown>
 				{user?.url ? (
 					<img

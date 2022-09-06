@@ -10,6 +10,9 @@ const spotifyConnexion = (state = initialState.token, action) => {
 		case tokentypes.SET_ACCESS_TOKEN:
 			newState = action.payload;
 			return newState;
+		case tokentypes.REFRESH_TOKEN:
+			newState = action.payload;
+			return newState;
 		default:
 			return newState;
 	}

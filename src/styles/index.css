@@ -14865,10 +14865,31 @@ textarea.form-control-lg {
 .head-tracks{
   background: linear-gradient(180deg, rgba(209,236,254,1) 0%, rgba(255,255,255,1) 70%);
 }
-
+body{
+  overflow: hidden;
+}
 .cardItems{
   padding: 0;
   margin: 0;
   outline: none;
   border: none;
+}
+.scroll-y{
+  overflow-y: scroll;
+  height: 650px;
+}
+.scroll-x{
+  height: 350px;
+  overflow-x: scroll;
+}
+.scroll-x::-webkit-scrollbar{
+  width: 0.1rem;
+  height: 0.1rem;
+}
+ .scroll-y::-webkit-scrollbar{
+  width: 0px;
+  height: 0px;
+}
+.scroll-x::-webkit-scrollbar-thumb , .scroll-y::-webkit-scrollbar-thumb{
+  background: #0D1E56;
 }
