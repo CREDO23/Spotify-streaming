@@ -7,6 +7,7 @@ import { search } from '../store/actions/mediaAction';
 import TrackItem from './TrackItem';
 import CardsItem from './CardItems';
 import { Table } from 'react-bootstrap';
+import Head from './Head';
 
 const Search = () => {
 	const token = useSelector((state) => state.token);
@@ -23,6 +24,9 @@ const Search = () => {
 
 	return (
 		<div className='scroll-y search'>
+			<div>
+				<Head />
+			</div>
 			<div className=' d-flex align-items-center justify-content-center'>
 				<input
 					value={query}

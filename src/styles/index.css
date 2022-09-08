@@ -14877,7 +14877,7 @@ body{
 
 .scroll-y{
   overflow-y: scroll;
-  height: 580px;
+  height: 95vh
 }
 .scroll-x{
   height: 350px;
@@ -14897,9 +14897,6 @@ body{
 .tracks{
   height:420px ;
 }
-.search{
-  height: 630px;
-}
 @media (max-width: 576px) {
     .sidebar , .recent , .description {
       display: none;
@@ -14917,7 +14914,9 @@ body{
     .main{
       width: 100%;
     }
-    
+    .menus{
+      display: block;
+    }
      
       .col-s-2 {
         flex: 0 0 auto;
