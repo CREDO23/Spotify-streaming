@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { GiHeadphones } from 'react-icons/gi';
 import { useEffect } from 'react';
 import { playTrack } from '../store/actions/mediaAction';
+import Head from './Head';
 
 const Tracks = () => {
 	const token = useSelector((state) => state.token);
@@ -27,6 +28,9 @@ const Tracks = () => {
 
 	return (
 		<div className='w-100'>
+			<div>
+				<Head />
+			</div>
 			<div className='head-tracks w-100'>
 				<div className=' m-5 d-inline-flex  align-items-center'>
 					<div className=' me-4'>

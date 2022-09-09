@@ -19,7 +19,6 @@ const Main = () => {
 			dispatch(getHomePlaylists(token));
 		}
 	}, []);
-	console.log(collection);
 
 	return (
 		<div className=' w-100'>

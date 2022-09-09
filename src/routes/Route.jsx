@@ -10,7 +10,7 @@ import Main from '../components/Main';
 import { useSelector } from 'react-redux/es/exports';
 
 const LesRoutes = () => {
-	const token = useSelector((state) => state.token);
+	const user = useSelector((state) => state.currentUser);
 	return (
 		<>
 			<Routes>

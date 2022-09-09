@@ -41,12 +41,17 @@ function ItemCard({
 				alt={nom.substring(0, 5)}
 			/>
 			<Card.Body>
-				{/* <Card.Title>{nom.substring(0, 12)}.</Card.Title> */}
-				{/* <Card.Text>{description.substring(0, 15)}...</Card.Text> */}
-				<VscPlayCircle
-					onClick={() => dispatch(playTrack({ id, type }))}
-					size={30}
-				/>
+				<div className='row '>
+					<div className='col-3 '>
+						<VscPlayCircle
+							onClick={() => dispatch(playTrack({ id, type }))}
+							size={30}
+						/>
+					</div>
+					<div className='col-9 d-flex align-items-center'>
+						<p>{nom.substring(0, 12)}.</p>
+					</div>
+				</div>
 			</Card.Body>
 		</Card>
 	);
