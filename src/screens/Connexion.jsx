@@ -10,6 +10,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { setUserInfo } from '../store/actions/userAction';
 import { useNavigate } from 'react-router-dom';
+import { getHomePlaylists } from '../store/actions/mediaAction';
 
 const Connexion = () => {
 	const dispatch = useDispatch();
@@ -22,6 +23,7 @@ const Connexion = () => {
 
 	useEffect(() => {
 		dispatch(refreshToken());
+		dispatch(getHomePlaylists(token));
 		google.accounts.id.initialize({
 			client_id:
 				'398589697419-il2ubj4ehetuvs8198ptu168uodulu40.apps.googleusercontent.com',
@@ -37,11 +39,7 @@ const Connexion = () => {
 		<Container className='fluid  vh-100 flex-column d-flex align-items-center justify-content-center'>
 			<p className='h5 fs-4'>Welcome to RILLBY</p>
 			<img className=' my-5' src={logo} alt='' />
-			<div
-				onClick={() => {
-					dispatch(getHomePlaylists(token));
-				}}
-				className='login'></div>
+			<div className='login'></div>
 		</Container>
 	);
 };
