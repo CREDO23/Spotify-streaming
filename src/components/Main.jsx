@@ -28,7 +28,7 @@ const Main = () => {
 			<div className='w-100 d-flex'>
 				<div className='scroll-y main '>
 					{collection &&
-						collection.map((elmt, index) => {
+						collection?.map((elmt, index) => {
 							return (
 								<CardsItem
 									key={index}
