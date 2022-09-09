@@ -1,9 +1,15 @@
 /** @format */
 
 import React from 'react';
+import Head from './Head';
 
 const Favorites = () => {
-	return <div>Not Mnaged</div>;
+	return (
+		<div>
+			<Head />
+			Not Mnaged
+		</div>
+	);
 };
 
 export default Favorites;
