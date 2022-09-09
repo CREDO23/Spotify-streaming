@@ -21,20 +21,20 @@ const Sidebar = () => {
 		{
 			icon: <BiLibrary size={24} />,
 			label: 'Your Library',
-			path: '/',
+			path: '/library',
 		},
 	];
 	const secondtPart = [
 		{
 			icon: <AiOutlinePlusCircle className='icon' size={24} />,
 			label: 'Add a PlayList',
-			path: '/',
+			path: '/playlist',
 		},
 
 		{
 			icon: <MdFavoriteBorder size={24} />,
 			label: 'Liked Songs',
-			path: '/',
+			path: '/favorites',
 		},
 	];
 

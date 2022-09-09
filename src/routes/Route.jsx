@@ -8,6 +8,9 @@ import Search from '../components/Search';
 import React from 'react';
 import Main from '../components/Main';
 import { useSelector } from 'react-redux/es/exports';
+import YourLibrarie from '../components/YourLibrarie';
+import Favorites from '../components/Favorites';
+import Playlist from '../components/Playlist';
 
 const LesRoutes = () => {
 	const user = useSelector((state) => state.currentUser);
@@ -16,9 +19,12 @@ const LesRoutes = () => {
 			<Routes>
 				<Route path='/' element={<Connexion />} />
 				<Route path='/home/' element={<Home />}>
+					<Route path='' element={<Main />} />
 					<Route path='tracks' element={<Tracks />} />
 					<Route path='search' element={<Search />} />
-					<Route path='' element={<Main />} />
+					<Route path='library' element={<YourLibrarie />} />
+					<Route path='favorites' element={<Favorites />} />
+					<Route path='playlist' element={<Playlist />} />
 				</Route>
 			</Routes>
 		</>
