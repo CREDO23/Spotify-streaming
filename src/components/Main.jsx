@@ -14,10 +14,8 @@ const Main = () => {
 	const collection = useSelector((state) => state.media.homePlayList);
 
 	useEffect(() => {
-		{
-			dispatch(refreshToken());
-			dispatch(getHomePlaylists(token));
-		}
+		dispatch(refreshToken());
+		dispatch(getHomePlaylists(token));
 	}, []);
 
 	return (
