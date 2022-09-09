@@ -7,7 +7,9 @@ const Favorites = () => {
 	return (
 		<div>
 			<Head />
-			Not Mnaged
+			<div className=' d-flex align-items-center justify-content-center'>
+				Not MAnaged
+			</div>
 		</div>
 	);
 };

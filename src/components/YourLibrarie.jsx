@@ -7,7 +7,9 @@ const YourLibrarie = () => {
 	return (
 		<div>
 			<Head />
-			Not Managed
+			<div className=' d-flex align-items-center justify-content-center'>
+				Not Managed
+			</div>
 		</div>
 	);
 };

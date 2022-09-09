@@ -7,7 +7,9 @@ const Playlist = () => {
 	return (
 		<div>
 			<Head />
-			Not managed
+			<div className=' d-flex align-items-center justify-content-center'>
+				Not Managed
+			</div>
 		</div>
 	);
 };
