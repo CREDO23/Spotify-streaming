@@ -7,10 +7,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { refreshToken } from '../store/actions/spotifyConnexionAction';
 import jwt_decode from 'jwt-decode';
 import { useEffect } from 'react';
-import { useState } from 'react';
 import { setUserInfo } from '../store/actions/userAction';
 import { useNavigate } from 'react-router-dom';
 import { getHomePlaylists } from '../store/actions/mediaAction';
+
 
 const Connexion = () => {
 	const dispatch = useDispatch();
@@ -20,13 +20,12 @@ const Connexion = () => {
 		dispatch(setUserInfo(jwt_decode(response.credential)));
 		navigate('/home');
 	};
-
+console.log(import.meta.env.VITE_CLIENT_ID_GOOGLE)
 	useEffect(() => {
 		dispatch(refreshToken());
 		dispatch(getHomePlaylists(token));
 		google.accounts.id.initialize({
-			client_id:
-				'398589697419-il2ubj4ehetuvs8198ptu168uodulu40.apps.googleusercontent.com',
+			client_id:import.meta.env.VITE_CLIENT_ID_GOOGLE,
 			callback: handleResponse,
 		});
 		google.accounts.id.renderButton(
